@@ -175,13 +175,13 @@ export const SkillsInfo = [
     },
     {
       id: 2,
-      title: "Brain Tumor Detection using CNN",
+      title: "Agentic SOC",
       description:
-        "Developed a deep learning model to classify brain tumor images using Convolutional Neural Networks (CNN) and applied Grad-CAM heatmaps to visualize important tumor regions, achieving 86.1% accuracy.",
+        "Built a real-time SOC dashboard using React, n8n, and Google Sheets API with live data updates every 10 seconds. Implemented threat monitoring, incident management, and notification systems with interactive charts and PDF export functionality.",
       image: movierecLogo,
-      tags: ["Python", "CNN", "Deep Learning", "Grad-CAM", "AI"],
-      github: "https://github.com/Vansh150705/Brain-Tumor-Detection-CNN",
-      webapp: "#",
+      tags: ["React JS", "n8n", "Google Sheets API", "Real-time", "Automation Workflow"],
+      github: "https://github.com/Vansh150705/Frontend-Agentic-SOC",
+      webapp: "https://frontend-agentic-soc.vercel.app/",
     },
   ];
 
