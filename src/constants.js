@@ -40,13 +40,13 @@ import newtonschoolLogo from './assets/company_logo/iwai-logo.jpg';
 
 // Education Section Logo's
 import glaLogo from './assets/education_logo/srmlogo.jpeg';
-import bsaLogo from './assets/education_logo/dav-logo.png';
+import davLogo from './assets/education_logo/dav-logo.png';
 import vpsLogo from './assets/education_logo/vps_logo.png';
 
 // Project Section Logo's
 import githubdetLogo from './assets/work_logo/Taskflow.png';
 import csprepLogo from './assets/work_logo/Blogify.png';
-import movierecLogo from './assets/work_logo/movie_rec.png';
+import movierecLogo from './assets/work_logo/AgenticSOC.png';
 import taskremLogo from './assets/work_logo/task_rem.png';
 import npmLogo from './assets/work_logo/npm.png';
 import webverLogo from './assets/work_logo/web_dig.png';
@@ -143,7 +143,7 @@ export const SkillsInfo = [
     },
     {
       id: 1,
-      img: vpsLogo,
+      img: davLogo,
       school: "Suraj Bhan D.A.V. Public School",
       date: "Batch: 2023",
       grade: "",
@@ -160,8 +160,8 @@ export const SkillsInfo = [
         "Built a MERN stack task management system with JWT authentication, role-based dashboards, real-time chat, and sub-task workflows. This system improves task resolution efficiency by 40%.",
       image: githubdetLogo,
       tags: ["React JS", "Node.js", "MongoDB", "Express", "JWT", "Chat"],
-      github: "https://github.com",
-      webapp: "#",
+      github: "https://github.com/Vansh150705/taskmanager-frontend",
+      webapp: "https://office-task-manager.vercel.app/",
     },
     {
       id: 1,
@@ -170,8 +170,8 @@ export const SkillsInfo = [
         "Full Stack AI Powered Blogging Web Application using MERN stack, Google Gemini, and Imagekit API. It automates content generation, reducing blog creation time by 50% compared to manual writing.",
       image: csprepLogo,
       tags: ["React JS", "Node.js", "Express", "MongoDB", "AI", "Gemini API"],
-      github: "https://github.com",
-      webapp: "#",
+      github: "https://github.com/Vansh150705/Blogify---by-VM",
+      webapp: "https://blogify-by-vm-frontend.vercel.app/",
     },
     {
       id: 2,
@@ -180,7 +180,7 @@ export const SkillsInfo = [
         "Developed a deep learning model to classify brain tumor images using Convolutional Neural Networks (CNN) and applied Grad-CAM heatmaps to visualize important tumor regions, achieving 86.1% accuracy.",
       image: movierecLogo,
       tags: ["Python", "CNN", "Deep Learning", "Grad-CAM", "AI"],
-      github: "https://github.com",
+      github: "https://github.com/Vansh150705/Brain-Tumor-Detection-CNN",
       webapp: "#",
     },
   ];
