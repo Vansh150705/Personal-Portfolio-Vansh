@@ -5,12 +5,7 @@ import { Timeline } from "../Timeline/Timeline";
 import { TimelineItem } from "../Timeline/TimelineItem";
 import { MdWorkOutline } from "react-icons/md";
 
-// Helper function to chunk array into pairs
-const chunkArray = (arr, size) => {
-  return Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
-    arr.slice(i * size, i * size + size)
-  );
-};
+// Experience components
 
 const ExperienceCard = ({ experience }) => (
   <>
@@ -56,8 +51,6 @@ const ExperienceCard = ({ experience }) => (
 );
 
 const Experience = () => {
-  const experienceChunks = chunkArray(experiences, 2);
-
   return (
     <section id="experience" className="py-24 px-[8vw] md:px-[10vw] lg:px-[16vw] font-sans relative z-10">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
@@ -78,14 +71,14 @@ const Experience = () => {
 
       {/* Experience Timeline */}
       <Timeline lineColor="from-primary via-secondary to-transparent">
-        {experienceChunks.map((chunk, index) => (
+        {experiences.map((experience) => (
           <TimelineItem 
-            key={index}
-            leftContent={<ExperienceCard experience={chunk[0]} />}
-            rightContent={chunk[1] ? <ExperienceCard experience={chunk[1]} /> : null}
+            key={experience.id}
             icon={<MdWorkOutline />}
             accentColor="primary"
-          />
+          >
+            <ExperienceCard experience={experience} />
+          </TimelineItem>
         ))}
       </Timeline>
     </section>

@@ -5,12 +5,7 @@ import { Timeline } from "../Timeline/Timeline";
 import { TimelineItem } from "../Timeline/TimelineItem";
 import { FaGraduationCap } from "react-icons/fa";
 
-// Helper function to chunk array into pairs
-const chunkArray = (arr, size) => {
-  return Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
-    arr.slice(i * size, i * size + size)
-  );
-};
+// Education components
 
 const EducationCard = ({ edu }) => (
   <>
@@ -49,8 +44,6 @@ const EducationCard = ({ edu }) => (
 );
 
 const Education = () => {
-  const educationChunks = chunkArray(education, 2);
-
   return (
     <section id="education" className="py-24 px-[8vw] md:px-[10vw] lg:px-[16vw] font-sans relative z-10">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
@@ -71,14 +64,14 @@ const Education = () => {
 
       {/* Education Timeline */}
       <Timeline lineColor="from-secondary via-primary to-transparent">
-        {educationChunks.map((chunk, index) => (
+        {education.map((edu) => (
           <TimelineItem 
-            key={index}
-            leftContent={<EducationCard edu={chunk[0]} />}
-            rightContent={chunk[1] ? <EducationCard edu={chunk[1]} /> : null}
+            key={edu.id}
             icon={<FaGraduationCap />}
             accentColor="secondary"
-          />
+          >
+            <EducationCard edu={edu} />
+          </TimelineItem>
         ))}
       </Timeline>
     </section>

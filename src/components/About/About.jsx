@@ -75,13 +75,11 @@ const About = () => {
 
           <motion.a
             variants={itemVariants}
-            href="#"
+            href="/Vansh Resume.pdf"
+            download="Vansh Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block text-white py-3 px-8 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
-            style={{
-              background: 'linear-gradient(90deg, var(--tw-colors-primary), var(--tw-colors-secondary))',
-            }}
+            className="inline-block text-white py-3 px-8 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-secondary shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
           >
             DOWNLOAD CV
           </motion.a>

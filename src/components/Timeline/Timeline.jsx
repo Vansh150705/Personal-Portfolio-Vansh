@@ -2,18 +2,12 @@ import React from "react";
 
 export const Timeline = ({ children, lineColor = "from-primary via-secondary to-transparent" }) => {
   return (
-    <div className="relative w-full max-w-7xl mx-auto py-10">
-      <div 
-        className="grid grid-cols-[80px_1fr] sm:grid-cols-[1fr_100px_1fr] gap-y-16 lg:gap-y-24 relative w-full items-center"
-      >
-        {/* Full-height vertical timeline line anchored cleanly in grid column */}
-        <div 
-          className="col-start-1 sm:col-start-2 row-start-1 row-end-auto flex justify-center items-center pointer-events-none z-0" 
-          style={{ gridRow: "1 / -1" }}
-        >
-          <div className={`w-[2px] h-full bg-gradient-to-b ${lineColor}`}></div>
-        </div>
+    <div className="relative w-full max-w-4xl mx-auto py-10 flex flex-col items-center">
+      {/* Central absolute line overlay aligned flawlessly to 50% */}
+      <div className={`absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b ${lineColor} z-0 -ml-[1px]`} />
 
+      {/* 1-Col Stack Array */}
+      <div className="flex flex-col gap-y-16 md:gap-y-24 relative w-full z-10 px-2 sm:px-8">
         {children}
       </div>
     </div>

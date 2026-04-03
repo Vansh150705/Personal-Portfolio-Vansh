@@ -68,12 +68,12 @@ const Contact = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="w-full max-w-lg glass glass-hover p-8 md:p-10 rounded-3xl relative overflow-hidden"
+        className="w-full max-w-lg mx-auto glass glass-hover p-8 md:p-10 rounded-3xl relative overflow-hidden"
       >
         <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 blur-[60px] rounded-full pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-secondary/20 blur-[60px] rounded-full pointer-events-none" />
 
-        <h3 className="text-2xl font-bold text-white text-center mb-8 relative z-10 tracking-wide font-heading">
+        <h3 className="text-2xl font-bold text-text-primary text-center mb-8 relative z-10 tracking-wide font-heading">
           Connect With Me <motion.span 
             animate={{ rotate: [0, 10, -10, 0] }} 
             transition={{ repeat: Infinity, duration: 2 }}
@@ -88,7 +88,7 @@ const Contact = () => {
               name="user_email"
               placeholder="Your Email"
               required
-              className="w-full p-4 rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-primary focus:bg-white/10 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
+              className="w-full p-4 rounded-xl bg-black/5 text-text-primary border border-black/10 focus:outline-none focus:border-primary focus:bg-black/5 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
             />
           </div>
           
@@ -98,7 +98,7 @@ const Contact = () => {
               name="user_name"
               placeholder="Your Name"
               required
-              className="w-full p-4 rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-primary focus:bg-white/10 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
+              className="w-full p-4 rounded-xl bg-black/5 text-text-primary border border-black/10 focus:outline-none focus:border-primary focus:bg-black/5 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
             />
           </div>
 
@@ -108,7 +108,7 @@ const Contact = () => {
               name="subject"
               placeholder="Subject"
               required
-              className="w-full p-4 rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-primary focus:bg-white/10 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
+              className="w-full p-4 rounded-xl bg-black/5 text-text-primary border border-black/10 focus:outline-none focus:border-primary focus:bg-black/5 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
             />
           </div>
 
@@ -118,7 +118,7 @@ const Contact = () => {
               placeholder="Message"
               rows="5"
               required
-              className="w-full p-4 rounded-xl bg-white/5 text-white border border-white/10 focus:outline-none focus:border-primary focus:bg-white/10 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal resize-none"
+              className="w-full p-4 rounded-xl bg-black/5 text-text-primary border border-black/10 focus:outline-none focus:border-primary focus:bg-black/5 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal resize-none"
             />
           </div>
           
@@ -126,8 +126,7 @@ const Contact = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            className="w-full py-4 text-white font-bold text-lg rounded-xl transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] tracking-wide"
-            style={{ background: 'linear-gradient(90deg, var(--tw-colors-primary), var(--tw-colors-secondary))' }}
+            className="w-full py-4 text-white font-bold text-lg rounded-xl transition-all bg-gradient-to-r from-primary to-secondary shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] tracking-wide"
           >
             Send Message
           </motion.button>
