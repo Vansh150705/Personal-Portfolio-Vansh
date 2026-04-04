@@ -19,13 +19,13 @@ const extracurricularData = [
     role: "Athletics Team Captain",
     company: "College Sports Team, SRM IST",
     date: "Sep 2024 - Nov 2025",
-    desc: "Captained a team of 8+ athletes across inter-college competitions, managing training schedules, team coordination, and on-ground strategy. Organized 3 inter-college sports events end-to-end — demonstrating leadership, discipline, and the ability to perform under competitive pressure.",
+    desc: "Captained a team of 8+ athletes across inter-college competitions, managing training schedules, team coordination, and on-ground strategy. Organized 3 inter-college sports events end-to-end demonstrating leadership, discipline, and the ability to perform under competitive pressure.",
     icon: <FaRunning className="w-full h-full text-primary p-2" />
   },
   {
     id: 2,
     role: "PR Team Lead",
-    company: "College Annual Cultural Fest, SRM IST",
+    company: "Rubaroo Fest, SRM IST",
     date: "Apr 2025",
     desc: "Led the public relations and outreach division for the college's flagship annual fest — managing a cross-functional team, coordinating with external sponsors and partners, and driving pre-event buzz across social channels. Ensured seamless communication between internal teams and external stakeholders under tight deadlines.",
     icon: <FaMicrophone className="w-full h-full text-secondary p-2" />
