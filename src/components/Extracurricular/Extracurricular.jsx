@@ -8,26 +8,26 @@ import { MdEmojiEvents } from "react-icons/md";
 const extracurricularData = [
   {
     id: 0,
-    role: "PR Member",
-    company: "Music Club - Magan",
+    role: "Public Relations Member",
+    company: "Music Club — Magan, SRM IST",
     date: "Jan 2025 - Apr 2026",
-    desc: "Actively involved in public relations and event promotion for the official college music club.",
+    desc: "Drove visibility and audience engagement for one of the college's most active creative clubs. Managed event promotion, external outreach, and digital communications — building brand presence for Magan's performances and cultural showcases across campus.",
     icon: <FaMusic className="w-full h-full text-secondary p-2" />
   },
   {
     id: 1,
-    role: "Athletics Captain",
-    company: "College Sports Team",
+    role: "Athletics Team Captain",
+    company: "College Sports Team, SRM IST",
     date: "Sep 2024 - Nov 2025",
-    desc: "Served as Athletics Team Captain, leading 8+ athletes and organizing 3 inter-college sports events.",
+    desc: "Captained a team of 8+ athletes across inter-college competitions, managing training schedules, team coordination, and on-ground strategy. Organized 3 inter-college sports events end-to-end — demonstrating leadership, discipline, and the ability to perform under competitive pressure.",
     icon: <FaRunning className="w-full h-full text-primary p-2" />
   },
   {
     id: 2,
     role: "PR Team Lead",
-    company: "College Annual Fest",
-    date: "Apr 2025 - Apr 2025",
-    desc: "Headed the public relations and outreach efforts for the college’s flagship cultural event, managing a team and coordinating with external partners.",
+    company: "College Annual Cultural Fest, SRM IST",
+    date: "Apr 2025",
+    desc: "Led the public relations and outreach division for the college's flagship annual fest — managing a cross-functional team, coordinating with external sponsors and partners, and driving pre-event buzz across social channels. Ensured seamless communication between internal teams and external stakeholders under tight deadlines.",
     icon: <FaMicrophone className="w-full h-full text-secondary p-2" />
   }
 ];
@@ -75,7 +75,7 @@ const Extracurricular = () => {
         <h2 className="text-3xl sm:text-5xl font-heading font-bold text-text-primary tracking-tight">EXTRA CURRICULAR</h2>
         <div className="w-24 h-1 bg-gradient-to-r from-secondary to-primary mx-auto mt-4 rounded-full"></div>
         <p className="text-text-secondary mt-6 text-lg max-w-2xl mx-auto">
-          Activities and roles that go beyond academics, shaping leadership and teamwork.
+          Leadership, communication, and teamwork — built outside the classroom and proven under real pressure.
         </p>
       </motion.div>
 

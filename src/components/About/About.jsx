@@ -51,15 +51,16 @@ const About = () => {
           
           <div className="overflow-hidden">
             <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-primary leading-tight">
-              <span className="text-text-primary">I am a </span>
+              <span className="text-text-primary">I build </span>
               <ReactTypingEffect
                 text={[
-                  'Front-End Developer',
-                  'Full Stack Developer',
-                  'UI/UX Enthusiast',
+                  'Scalable Full Stack Systems',
+                  'AI-Integrated Applications',
+                  'Production-Ready Architectures',
+                  'Cloud-Ready Solutions',
                 ]}
-                speed={100}
-                eraseSpeed={50}
+                speed={80}
+                eraseSpeed={40}
                 typingDelay={500}
                 eraseDelay={2000}
                 cursorRenderer={(cursor) => (
@@ -70,7 +71,7 @@ const About = () => {
           </div>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg text-text-secondary mb-8 mt-6 leading-relaxed max-w-lg mx-auto md:mx-0">
-            I am a full-stack developer currently pursuing my B.Tech in Computer Science. Skilled in modern web technologies, I specialize in the MERN stack and crafting beautiful, high-performance user experiences.
+            Full-Stack Engineer — experienced in designing and building end-to-end web applications across real-world projects and internships. Specialized in the MERN stack with growing expertise in AI integration and AWS cloud, focused on developing scalable, high-performance systems with clean architecture and reliable deployment.
           </motion.p>
 
           <motion.a

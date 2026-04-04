@@ -11,27 +11,27 @@ import pragatiLogo from "../../assets/company_logo/pragati-logo.png";
 const volunteeringData = [
   {
     id: 0,
-    role: "Marketing and Content Intern · Malnutrition",
-    company: "Hamari Pachhan NGO",
+    role: "Marketing & Content Intern · Social Impact Campaigns",
+    company: "Hamari Pahchan NGO",
     date: "Aug 2024 - Sep 2024",
-    desc: "Designed 15+ social media creatives and contributed to digital marketing campaigns.",
+    desc: "Conceptualized and designed 15+ high-engagement social media creatives to amplify the NGO's digital presence. Drove awareness campaigns targeting malnutrition issues, combining design thinking with content strategy to maximize community outreach and donor engagement.",
     img: hamariLogo
   },
   {
     id: 1,
-    role: "Teaching Intern · Teaching Underprivileged Children",
-    company: "The Rising People Welfare Society",
+    role: "Teaching Intern · Education for Underprivileged Children",
+    company: "The Rising People Welfare Society (TRPWS)",
     date: "Jul 2024 - Sep 2024",
-    desc: "Taught 20+ underprivileged students, supporting after-school learning programs.",
+    desc: "Delivered structured after-school learning sessions to 20+ underprivileged students, developing personalized teaching approaches to improve comprehension and build academic confidence. Contributed directly to bridging the educational gap in underserved communities across Delhi.",
     img: risingLogo,
     imgClass: "scale-[1.2]"
   },
   {
     id: 2,
-    role: "Community Service Intern · Food Distribution",
+    role: "Community Service Intern · Grassroots Relief Operations",
     company: "Pragati Prayas",
     date: "Jun 2025 - Jul 2025",
-    desc: "Organized 3+ food distribution drives, providing essential resources to underprivileged communities.",
+    desc: "Led end-to-end coordination of 3+ food distribution drives, mobilizing volunteers and managing logistics to deliver essential resources to underprivileged communities. Demonstrated leadership, ground-level execution, and commitment to social welfare under real operational constraints.",
     img: pragatiLogo,
     imgClass: "scale-[1.9]"
   }
@@ -80,7 +80,7 @@ const Volunteering = () => {
         <h2 className="text-3xl sm:text-5xl font-heading font-bold text-text-primary tracking-tight">VOLUNTEERING</h2>
         <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
         <p className="text-text-secondary mt-6 text-lg max-w-2xl mx-auto">
-          Giving back to the community and making an impact through various social initiatives.
+          Beyond code — actively contributing to social impact through education, outreach, and community-driven initiatives.
         </p>
       </motion.div>
 
