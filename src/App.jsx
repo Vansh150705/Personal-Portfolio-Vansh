@@ -7,6 +7,8 @@ import Work from "./components/Work/Work";
 import Education from "./components/Education/Education";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
+import Volunteering from "./components/Volunteering/Volunteering";
+import Extracurricular from "./components/Extracurricular/Extracurricular";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 const App = () => {
@@ -40,6 +42,8 @@ const App = () => {
         <Experience />
         <Work />
         <Education />
+        <Volunteering />
+        <Extracurricular />
         <Contact />
         <Footer />
       </div>

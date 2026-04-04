@@ -68,6 +68,8 @@ const Navbar = () => {
     { id: "experience", label: "Experience" },
     { id: "work", label: "Projects" },
     { id: "education", label: "Education" },
+    { id: "volunteering", label: "Volunteering" },
+    { id: "extracurricular", label: "Extra Curricular" },
   ];
 
   return (

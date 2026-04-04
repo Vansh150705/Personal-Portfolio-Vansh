@@ -62,13 +62,13 @@ const Work = () => {
                 onClick={() => setSelectedProject(project)}
                 className="h-full glass glass-hover rounded-3xl overflow-hidden cursor-pointer flex flex-col group bg-white/40"
               >
-                <div className="relative overflow-hidden h-56 p-4">
+                <div className="relative overflow-hidden h-96 p-4">
                   {/* Subtle vignette gradient in light mode */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 z-10" />
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-sm"
+                    className="w-full h-full object-cover object-top rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-sm bg-black/5"
                   />
                   {/* Decorative corner accents */}
                   <div className="absolute top-2 left-2 w-8 h-8 border-t border-l border-primary/50 rounded-tl-xl" />
@@ -131,12 +131,12 @@ const Work = () => {
               </button>
 
               <div className="overflow-y-auto no-scrollbar">
-                <div className="w-full h-64 md:h-80 bg-white relative overflow-hidden">
+                <div className="w-full h-96 md:h-[500px] bg-white relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
                   <img
                     src={selectedProject.image}
                     alt={selectedProject.title}
-                    className="w-full h-full object-cover relative z-0"
+                    className="w-full h-full object-cover object-top relative z-0 bg-black/5"
                   />
                 </div>
                 

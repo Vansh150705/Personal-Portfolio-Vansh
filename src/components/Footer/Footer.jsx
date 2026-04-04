@@ -26,13 +26,21 @@ const Footer = () => {
 
         {/* Quick Links */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-8">
-          {["About", "Skills", "Experience", "Projects", "Education"].map((item) => (
+          {[
+            { id: "about", label: "About" },
+            { id: "skills", label: "Skills" },
+            { id: "experience", label: "Experience" },
+            { id: "work", label: "Projects" },
+            { id: "education", label: "Education" },
+            { id: "volunteering", label: "Volunteering" },
+            { id: "extracurricular", label: "Extra Curricular" }
+          ].map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+              key={item.id}
+              href={`#${item.id}`}
               className="text-text-secondary hover:text-text-primary transition-colors text-sm sm:text-base font-medium tracking-wide relative group"
             >
-              {item}
+              {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
