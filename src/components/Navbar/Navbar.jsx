@@ -122,7 +122,7 @@ const Navbar = () => {
             <FaGithub size={22} />
           </a>
           <a
-            href="www.linkedin.com/in/vansh-mahajan-napv"
+            href="https://www.linkedin.com/in/vansh-mahajan-napv/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-secondary hover:text-primary transition-colors transform hover:scale-110"
