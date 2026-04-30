@@ -20,12 +20,8 @@ export const SkillsInfo = [
     skills: ['C++', 'JavaScript', 'PHP', 'Python']
   },
   {
-    title: 'Frontend',
-    skills: ['HTML', 'CSS', 'React.js', 'Next.js', 'Tailwind CSS', 'Redux', 'GSAP', 'Framer Motion']
-  },
-  {
-    title: 'Backend',
-    skills: ['Node.js', 'Express.js', 'Django', 'REST APIs', 'Socket.io']
+    title: 'Full-Stack Web',
+    skills: ['HTML', 'CSS', 'React.js', 'Next.js', 'Tailwind CSS', 'Redux', 'GSAP', 'Framer Motion', 'Node.js', 'Express.js', 'Django', 'REST APIs', 'Socket.io']
   },
   {
     title: 'Databases',
