@@ -24,16 +24,16 @@ export const SkillsInfo = [
     skills: ['HTML', 'CSS', 'React.js', 'Next.js', 'Tailwind CSS', 'Redux', 'GSAP', 'Node.js', 'Express.js', 'REST APIs', 'Socket.io']
   },
   {
+    title: 'AI Engineering',
+    skills: ['LangChain', 'FAISS', 'RAG', 'Agentic AI', 'Gemini']
+  },
+  {
     title: 'Databases',
     skills: ['MongoDB', 'SQL']
   },
   {
     title: 'Cloud & DevOps',
     skills: ['AWS', 'Docker', 'CI/CD', 'Vercel']
-  },
-  {
-    title: 'AI Engineering',
-    skills: ['LangChain', 'FAISS', 'RAG', 'Agentic AI', 'Gemini']
   },
   {
     title: 'Tools',
