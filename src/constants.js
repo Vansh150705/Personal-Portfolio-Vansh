@@ -12,7 +12,7 @@ import vpsLogo from './assets/education_logo/vps_logo.png';
 import githubdetLogo from './assets/work_logo/Taskflow.png';
 import csprepLogo from './assets/work_logo/Blogify.png';
 import movierecLogo from './assets/work_logo/AgenticSOC.png';
-import webverLogo from './assets/work_logo/webver.png';
+import webverLogo from './assets/work_logo/documind.png';
 
 export const SkillsInfo = [
   {
