@@ -54,10 +54,10 @@ const About = () => {
               <span className="text-text-primary">I build </span>
               <ReactTypingEffect
                 text={[
-                  'Scalable Full Stack Systems',
-                  'AI-Integrated Applications',
-                  'Production-Ready Architectures',
-                  'Cloud-Ready Solutions',
+                  'Scalable Full-Stack Systems',
+                  'Agentic RAG Systems',
+                  'Production-Grade AI Apps',
+                  'Cloud-Ready Architectures',
                 ]}
                 speed={80}
                 eraseSpeed={40}
@@ -71,7 +71,7 @@ const About = () => {
           </div>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg text-text-secondary mb-8 mt-6 leading-relaxed max-w-lg mx-auto md:mx-0">
-            Full-Stack Engineer — experienced in designing and building end-to-end web applications across real-world projects and internships. Specialized in the MERN stack with growing expertise in AI integration and AWS cloud, focused on developing scalable, high-performance systems with clean architecture and reliable deployment.
+            Full-Stack & AI Engineer — experienced in designing end-to-end web applications and intelligent Agentic AI systems. Specialized in the MERN stack alongside modern AI Engineering (Python, LangChain, FAISS, Gemini). From building complex, production-grade RAG pipelines like DocuMind AI to deploying scalable cloud architectures, I focus on delivering high-performance, future-ready solutions.
           </motion.p>
 
           <motion.a
