@@ -105,6 +105,22 @@ export const education = [
 export const projects = [
   {
     id: 0,
+    title: "DocuMind AI",
+    description:
+      "Built a production-grade Agentic RAG system using Python, LangChain, FAISS, and Gemini supporting chat with PDFs, websites, and YouTube videos. Implemented 3 Agentic AI layers (Clarification, Self-Reflection, Confidence Adaptation), Document DNA fingerprinting, Doc vs Doc Comparison with dual vector retrieval, chronological Timeline Extractor, Smart Flashcard Generator, and 5 one-click automation tools.",
+    image: webverLogo,
+    tags: [
+      "Python",
+      "LangChain",
+      "FAISS",
+      "Gemini",
+      "Agentic AI"
+    ],
+    github: "https://github.com/Vansh150705/DocuMind-AI",
+    webapp: "https://docu-mind-vansh.streamlit.app/",
+  },
+  {
+    id: 1,
     title: "Office-Task Management System",
     description:
       "Full-stack task management platform developed for Airports Authority of India, built on the MERN stack. Implements JWT-based authentication, role-based dashboards (Admin / Employee), real-time team communication, and hierarchical sub-task workflows. Designed scalable REST APIs and optimized MongoDB queries to support concurrent users, improving task tracking efficiency and overall workflow management.",
@@ -122,7 +138,7 @@ export const projects = [
     webapp: "https://office-task-manager.vercel.app/",
   },
   {
-    id: 1,
+    id: 2,
     title: "Blogify - by VM",
     description:
       "AI-powered full-stack blogging platform built using the MERN stack, integrating Google Gemini for intelligent content generation and ImageKit for optimized media delivery. Features authentication, dynamic content management, and a clean editor interface. Demonstrates practical integration of LLMs into web applications with a focus on performance, usability, and efficient content workflows.",
@@ -140,7 +156,7 @@ export const projects = [
     webapp: "https://blogify-by-vm-frontend.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Agentic SOC Platform",
     description:
       "Full-stack Security Operations Center (SOC) platform designed for real-time threat monitoring and incident management. Built end-to-end with a React frontend and automated data pipelines using n8n and Google Sheets API. Implements live data streaming, incident lifecycle tracking, multi-channel alerting, and PDF report generation. Focused on building a scalable, automation-driven system for operational visibility and efficient response handling.",
@@ -155,22 +171,6 @@ export const projects = [
     ],
     github: "https://github.com/Vansh150705/Frontend-Agentic-SOC",
     webapp: "https://frontend-agentic-soc.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "DocuMind AI",
-    description:
-      "Built a production-grade Agentic RAG system using Python, LangChain, FAISS, and Gemini supporting chat with PDFs, websites, and YouTube videos. Implemented 3 Agentic AI layers (Clarification, Self-Reflection, Confidence Adaptation), Document DNA fingerprinting, Doc vs Doc Comparison with dual vector retrieval, chronological Timeline Extractor, Smart Flashcard Generator, and 5 one-click automation tools.",
-    image: webverLogo,
-    tags: [
-      "Python",
-      "LangChain",
-      "FAISS",
-      "Gemini",
-      "Agentic AI"
-    ],
-    github: "https://github.com/Vansh150705/DocuMind-AI",
-    webapp: "https://docu-mind-vansh.streamlit.app/",
   },
 ];
 
