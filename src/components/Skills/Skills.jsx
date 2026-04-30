@@ -51,6 +51,13 @@ const iconMap = {
   "Chrome DevTools": `${DEVICON}/chrome/chrome-original.svg`,
   "Antigravity":   `${DEVICON}/python/python-original.svg`,
   "Stich":         `${DEVICON}/mongodb/mongodb-original.svg`,
+
+  // AI Engineering
+  "LangChain":     "https://cdn.simpleicons.org/langchain",
+  "FAISS":         "https://cdn.simpleicons.org/meta",
+  "RAG":           "https://cdn.simpleicons.org/qdrant",
+  "Agentic AI":    "https://cdn.simpleicons.org/huggingface",
+  "Gemini":        "https://cdn.simpleicons.org/googlegemini",
 };
 
 const Skills = () => {
