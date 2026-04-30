@@ -36,6 +36,10 @@ export const SkillsInfo = [
     skills: ['AWS', 'Docker', 'CI/CD', 'Vercel']
   },
   {
+    title: 'AI Engineering',
+    skills: ['LangChain', 'FAISS', 'RAG', 'Agentic AI', 'Gemini']
+  },
+  {
     title: 'Tools',
     skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'npm', 'Yarn', 'Figma', 'Chrome DevTools']
   }
