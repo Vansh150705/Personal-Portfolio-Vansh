@@ -12,7 +12,7 @@ import vpsLogo from './assets/education_logo/vps_logo.png';
 import githubdetLogo from './assets/work_logo/Taskflow.png';
 import csprepLogo from './assets/work_logo/Blogify.png';
 import movierecLogo from './assets/work_logo/AgenticSOC.png';
-import webverLogo from './assets/work_logo/web_dig.png';
+import webverLogo from './assets/work_logo/webver.png';
 
 export const SkillsInfo = [
   {
@@ -140,21 +140,37 @@ export const projects = [
     webapp: "https://blogify-by-vm-frontend.vercel.app/",
   },
   {
-  id: 2,
-  title: "Agentic SOC Platform",
-  description:
-    "Full-stack Security Operations Center (SOC) platform designed for real-time threat monitoring and incident management. Built end-to-end with a React frontend and automated data pipelines using n8n and Google Sheets API. Implements live data streaming, incident lifecycle tracking, multi-channel alerting, and PDF report generation. Focused on building a scalable, automation-driven system for operational visibility and efficient response handling.",
-  image: movierecLogo,
-  tags: [
-    "React.js",
-    "n8n",
-    "Google Sheets API",
-    "Automation",
-    "Real-time Systems",
-    "System Design"
-  ],
-  github: "https://github.com/Vansh150705/Frontend-Agentic-SOC",
-  webapp: "https://frontend-agentic-soc.vercel.app/",
+    id: 2,
+    title: "Agentic SOC Platform",
+    description:
+      "Full-stack Security Operations Center (SOC) platform designed for real-time threat monitoring and incident management. Built end-to-end with a React frontend and automated data pipelines using n8n and Google Sheets API. Implements live data streaming, incident lifecycle tracking, multi-channel alerting, and PDF report generation. Focused on building a scalable, automation-driven system for operational visibility and efficient response handling.",
+    image: movierecLogo,
+    tags: [
+      "React.js",
+      "n8n",
+      "Google Sheets API",
+      "Automation",
+      "Real-time Systems",
+      "System Design"
+    ],
+    github: "https://github.com/Vansh150705/Frontend-Agentic-SOC",
+    webapp: "https://frontend-agentic-soc.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "DocuMind AI",
+    description:
+      "Built a production-grade Agentic RAG system using Python, LangChain, FAISS, and Gemini supporting chat with PDFs, websites, and YouTube videos. Implemented 3 Agentic AI layers (Clarification, Self-Reflection, Confidence Adaptation), Document DNA fingerprinting, Doc vs Doc Comparison with dual vector retrieval, chronological Timeline Extractor, Smart Flashcard Generator, and 5 one-click automation tools.",
+    image: webverLogo,
+    tags: [
+      "Python",
+      "LangChain",
+      "FAISS",
+      "Gemini",
+      "Agentic AI"
+    ],
+    github: "https://github.com/Vansh150705/DocuMind-AI",
+    webapp: "https://docu-mind-vansh.streamlit.app/",
   },
 ];
 
