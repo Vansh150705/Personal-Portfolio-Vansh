@@ -21,7 +21,7 @@ export const SkillsInfo = [
   },
   {
     title: 'Full-Stack Web',
-    skills: ['HTML', 'CSS', 'React.js', 'Next.js', 'Tailwind CSS', 'Redux', 'GSAP', 'Framer Motion', 'Node.js', 'Express.js', 'Django', 'REST APIs', 'Socket.io']
+    skills: ['HTML', 'CSS', 'React.js', 'Next.js', 'Tailwind CSS', 'Redux', 'GSAP', 'Node.js', 'Express.js', 'REST APIs', 'Socket.io']
   },
   {
     title: 'Databases',
