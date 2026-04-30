@@ -71,7 +71,7 @@ const About = () => {
           </div>
 
           <motion.p variants={itemVariants} className="text-base sm:text-lg text-text-secondary mb-8 mt-6 leading-relaxed max-w-lg mx-auto md:mx-0">
-            Full-Stack & AI Engineer — experienced in designing end-to-end web applications and intelligent Agentic AI systems. Specialized in the MERN stack alongside modern AI Engineering (Python, LangChain, FAISS, Gemini). From building complex, production-grade RAG pipelines like DocuMind AI to deploying scalable cloud architectures, I focus on delivering high-performance, future-ready solutions.
+            Full-Stack & AI Engineer - experienced in designing end-to-end web applications and intelligent Agentic AI systems. Specialized in the MERN stack alongside modern AI Engineering. From building complex, production-grade RAG pipelines to deploying scalable cloud architectures, I focus on delivering high-performance, future-ready solutions.
           </motion.p>
 
           <motion.a
