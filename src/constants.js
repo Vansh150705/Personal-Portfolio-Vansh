@@ -17,7 +17,7 @@ import webverLogo from './assets/work_logo/documind.png';
 export const SkillsInfo = [
   {
     title: 'Languages',
-    skills: ['C++', 'JavaScript', 'PHP', 'Python']
+    skills: ['Python', 'JavaScript', 'C++', 'PHP']
   },
   {
     title: 'Full-Stack Web',
