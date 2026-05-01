@@ -121,7 +121,7 @@ export const projects = [
   },
   {
     id: 1,
-    title: "Office-Task Management System",
+    title: "TaskFlow",
     description:
       "Full-stack task management platform developed for Airports Authority of India, built on the MERN stack. Implements JWT-based authentication, role-based dashboards (Admin / Employee), real-time team communication, and hierarchical sub-task workflows. Designed scalable REST APIs and optimized MongoDB queries to support concurrent users, improving task tracking efficiency and overall workflow management.",
     image: githubdetLogo,
