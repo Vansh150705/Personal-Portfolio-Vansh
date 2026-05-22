@@ -103,21 +103,23 @@ export const education = [
 ];
 
 export const projects = [
-  {
+{
     id: 0,
-    title: "DocuMind AI",
+    title: "TalkDox",
     description:
-      "Built a production-grade Agentic RAG system using Python, LangChain, FAISS, and Gemini supporting chat with PDFs, websites, and YouTube videos. Implemented 3 Agentic AI layers (Clarification, Self-Reflection, Confidence Adaptation), Document DNA fingerprinting, Doc vs Doc Comparison with dual vector retrieval, chronological Timeline Extractor, Smart Flashcard Generator, and 5 one-click automation tools.",
+      "Built a production-grade Agentic RAG system using React, FastAPI, LangChain, FAISS, and Google Gemini 2.5 Flash — supporting chat with PDFs, websites, and YouTube videos. Implemented 3 Agentic AI layers (Clarification, Self-Reflection, Confidence Adaptation), Document DNA fingerprinting, Doc vs Doc Comparison with dual vector retrieval, chronological Timeline Extractor, Smart Flashcards, 5 automation tools, AI Personas, Voice Input, and Multilingual support. Deployed on Vercel + HuggingFace Spaces.",
     image: webverLogo,
     tags: [
-      "Python",
+      "React",
+      "FastAPI",
       "LangChain",
       "FAISS",
-      "Gemini",
-      "Agentic AI"
+      "Gemini 2.5 Flash",
+      "Agentic RAG",
+      "Python"
     ],
-    github: "https://github.com/Vansh150705/DocuMind-AI",
-    webapp: "https://docu-mind-vansh.streamlit.app/",
+    github: "https://github.com/Vansh150705/TalkDox",
+    webapp: "https://talkdox-ai.vercel.app",
   },
   {
     id: 1,
