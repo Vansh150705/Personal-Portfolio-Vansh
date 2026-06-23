@@ -10,7 +10,13 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+dist.zip
 *.local
+
+# Build / CI scratch output
+out.txt
+lint.txt
+vite_out.txt
 
 # Editor directories and files
 .vscode/*
