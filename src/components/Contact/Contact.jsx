@@ -44,7 +44,11 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-24 px-[8vw] md:px-[7vw] lg:px-[16vw] font-sans relative z-10">
-      
+
+      {/* Toast notifications host */}
+      <ToastContainer position="bottom-right" theme="light" autoClose={4000} />
+
+
       {/* Background Decorators */}
       <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-secondary/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
@@ -123,12 +127,13 @@ const Contact = () => {
           </div>
           
           <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            whileHover={!isSubmitting ? { scale: 1.02 } : undefined}
+            whileTap={!isSubmitting ? { scale: 0.98 } : undefined}
             type="submit"
-            className="w-full py-4 text-white font-bold text-lg rounded-xl transition-all bg-gradient-to-r from-primary to-secondary shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] tracking-wide"
+            disabled={isSubmitting}
+            className="w-full py-4 text-white font-bold text-lg rounded-xl transition-all bg-gradient-to-r from-primary to-secondary shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] tracking-wide disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Send Message
+            {isSubmitting ? "Sending..." : "Send Message"}
           </motion.button>
         </form>
       </motion.div>
