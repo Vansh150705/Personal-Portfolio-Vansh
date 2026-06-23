@@ -24,7 +24,7 @@ const App = () => {
       
       {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-primary to-blue-500 transform-origin-0 z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-primary to-blue-500 origin-left z-50"
         style={{ scaleX }}
       />
 
