@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Timeline = ({ children, lineColor = "from-primary via-secondary to-transparent" }) => {
   return (
     <div className="relative w-full max-w-4xl mx-auto py-10 flex flex-col items-center">

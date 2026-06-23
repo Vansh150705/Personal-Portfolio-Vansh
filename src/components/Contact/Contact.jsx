@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,26 +20,16 @@ const Contact = () => {
         "oqbQB5QkQW2SuUDfo"
       )
       .then(
-        (result) => {
+        () => {
           toast.success("Message sent successfully! ✨");
           setIsSubmitting(false);
           e.target.reset();
         },
-        (error) => {
+        () => {
           toast.error("Failed to send message. Please try again.");
           setIsSubmitting(false);
         }
       );
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } }
   };
 
   return (

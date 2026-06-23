@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { projects } from "../../constants";
 import { motion, AnimatePresence } from "framer-motion";
 import Tilt from "react-parallax-tilt";
@@ -36,7 +36,7 @@ const Work = () => {
         <h2 className="text-3xl sm:text-5xl font-heading font-bold text-text-primary tracking-tight">FEATURED PROJECTS</h2>
         <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-500 mx-auto mt-4 rounded-full"></div>
         <p className="text-text-secondary mt-6 text-lg max-w-2xl mx-auto">
-          A showcase of the systems and applications I've built, reflecting my journey as a full-stack developer.
+          A showcase of the systems and applications I&apos;ve built, reflecting my journey as a full-stack developer.
         </p>
       </motion.div>
 

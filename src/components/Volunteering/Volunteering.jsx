@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Timeline } from "../Timeline/Timeline";
 import { TimelineItem } from "../Timeline/TimelineItem";

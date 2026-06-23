@@ -6,7 +6,6 @@ import newtonschoolLogo from './assets/company_logo/iwai-logo.jpg';
 // Education Section Logo's
 import glaLogo from './assets/education_logo/srmlogo.jpeg';
 import davLogo from './assets/education_logo/dav-logo.png';
-import vpsLogo from './assets/education_logo/vps_logo.png';
 
 // Project Section Logo's
 import githubdetLogo from './assets/work_logo/Taskflow.png';

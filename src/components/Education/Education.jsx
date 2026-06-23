@@ -1,4 +1,3 @@
-import React from "react";
 import { education } from "../../constants";
 import { motion } from "framer-motion";
 import { Timeline } from "../Timeline/Timeline";
