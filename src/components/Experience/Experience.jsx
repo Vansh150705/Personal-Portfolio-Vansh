@@ -1,85 +1,66 @@
-import { experiences } from "../../constants";
-import { motion } from "framer-motion";
-import { Timeline } from "../Timeline/Timeline";
-import { TimelineItem } from "../Timeline/TimelineItem";
-import { MdWorkOutline } from "react-icons/md";
+import { motion } from 'framer-motion';
+import SectionHeader from '../system/SectionHeader';
+import { experiences } from '../../constants';
 
-// Experience components
-
-const ExperienceCard = ({ experience }) => (
-  <>
-    <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center mb-4 gap-4">
-      <div className="flex items-center gap-4">
-        {/* Company logo kept within the card for branding */}
-        <div className="w-12 h-12 rounded-lg bg-white p-1 shadow-md flex-shrink-0">
-          <img src={experience.img} alt={experience.company} className="w-full h-full object-contain rounded-md" />
-        </div>
-        <div>
-          <h3 className="text-xl sm:text-2xl font-semibold text-text-primary tracking-wide">
-            {experience.role}
-          </h3>
-          <h4 className="text-primary font-medium mt-1 mb-2 xl:mb-0">
-            {experience.company}
-          </h4>
-        </div>
-      </div>
-      <div className="bg-black/5 border border-black/5 text-text-secondary px-3 py-1 rounded-full whitespace-nowrap hidden xl:block">
-        <p className="text-xs sm:text-sm font-medium">{experience.date}</p>
-      </div>
-    </div>
-    
-    <div className="bg-black/5 border border-black/5 text-text-secondary px-3 py-1 rounded-full whitespace-nowrap inline-block xl:hidden mb-4">
-      <p className="text-xs font-medium">{experience.date}</p>
-    </div>
-
-    <p className="text-text-secondary leading-relaxed">{experience.desc}</p>
-    
-    <div className="mt-6">
-      <ul className="flex flex-wrap gap-2 mt-2">
-        {experience.skills.map((skill, idx) => (
-          <li
-            key={idx}
-            className="bg-primary/10 text-primary border border-primary/20 px-3 py-1 text-xs font-semibold rounded-lg"
-          >
-            {skill}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </>
-);
+const ease = [0.22, 1, 0.36, 1];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 px-[8vw] md:px-[10vw] lg:px-[16vw] font-sans relative z-10">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
-      
-      {/* Section Title */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-20 md:mb-24"
-      >
-        <h2 className="text-3xl sm:text-5xl font-heading font-bold text-text-primary tracking-tight">EXPERIENCE</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
-        <p className="text-text-secondary mt-6 text-lg max-w-2xl mx-auto">
-          A collection of my work experience and the roles I have taken to build impactful products.
-        </p>
-      </motion.div>
+    <section id="deployments" className="relative z-10 px-[7vw] py-24 lg:px-[10vw] lg:py-32">
+      <SectionHeader index="03" label="DEPLOYMENTS" title="Where I've shipped." />
 
-      {/* Experience Timeline */}
-      <Timeline lineColor="from-primary via-secondary to-transparent">
-        {experiences.map((experience) => (
-          <TimelineItem 
-            key={experience.id}
-            icon={<MdWorkOutline />}
-            accentColor="primary"
-          >
-            <ExperienceCard experience={experience} />
-          </TimelineItem>
-        ))}
-      </Timeline>
+      <div className="relative">
+        {/* spine */}
+        <div className="absolute bottom-0 left-0 top-2 hidden w-px bg-hairline md:block" />
+
+        <div className="space-y-6">
+          {experiences.map((exp, i) => (
+            <motion.article
+              key={exp.id}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-70px' }}
+              transition={{ duration: 0.6, ease, delay: i * 0.06 }}
+              className="group relative md:pl-12"
+            >
+              {/* node marker */}
+              <div className="absolute left-[-4px] top-6 hidden h-2 w-2 rotate-45 border border-signal bg-void transition-colors duration-300 group-hover:bg-signal md:block" />
+
+              <div className="blueprint-frame border border-hairline bg-panel p-6 transition-colors duration-300 hover:border-signal/30 sm:p-8">
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden border border-hairline bg-void">
+                      <img src={exp.img} alt={exp.company} className="h-full w-full object-contain p-1" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl font-medium text-text">{exp.role}</h3>
+                      <p className="mt-0.5 text-sm text-muted">{exp.company}</p>
+                    </div>
+                  </div>
+                  <div className="shrink-0 font-mono text-[11px] tracking-widest text-muted-2 sm:text-right">
+                    <span className="text-signal">DEP_{String(i + 1).padStart(3, '0')}</span>
+                    <br className="hidden sm:block" />
+                    <span className="ml-3 sm:ml-0">{exp.date}</span>
+                  </div>
+                </div>
+
+                <p className="mt-5 max-w-3xl leading-relaxed text-muted">{exp.desc}</p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {exp.skills.map((s) => (
+                    <span
+                      key={s}
+                      className="border border-hairline px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-2"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
