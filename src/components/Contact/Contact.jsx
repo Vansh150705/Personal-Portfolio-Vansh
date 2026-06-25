@@ -1,8 +1,20 @@
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { FiMail, FiGithub, FiLinkedin, FiMapPin, FiArrowRight } from 'react-icons/fi';
+import SectionHeader from '../system/SectionHeader';
+
+const CHANNELS = [
+  { icon: <FiMail />, label: 'EMAIL', value: 'vansh150705@gmail.com', href: 'mailto:vansh150705@gmail.com' },
+  { icon: <FiGithub />, label: 'GITHUB', value: '/Vansh150705', href: 'https://github.com/Vansh150705' },
+  { icon: <FiLinkedin />, label: 'LINKEDIN', value: '/vansh-mahajan-napv', href: 'https://www.linkedin.com/in/vansh-mahajan-napv/' },
+  { icon: <FiMapPin />, label: 'LOCATION', value: 'New Delhi, India', href: null },
+];
+
+const fieldClass =
+  'w-full border border-hairline bg-void px-4 py-3 font-mono text-sm text-text placeholder:text-muted-2 transition-colors duration-200 focus:border-signal focus:outline-none';
 
 const Contact = () => {
   const form = useRef();
@@ -11,122 +23,129 @@ const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     emailjs
-      .sendForm(
-        "service_71gqxjo", 
-        "template_mg0xlog", 
-        form.current,
-        "oqbQB5QkQW2SuUDfo"
-      )
+      .sendForm('service_71gqxjo', 'template_mg0xlog', form.current, 'oqbQB5QkQW2SuUDfo')
       .then(
         () => {
-          toast.success("Message sent successfully! ✨");
+          toast.success('Transmission sent. I will respond shortly.');
           setIsSubmitting(false);
           e.target.reset();
         },
         () => {
-          toast.error("Failed to send message. Please try again.");
+          toast.error('Transmission failed. Please retry.');
           setIsSubmitting(false);
-        }
+        },
       );
   };
 
   return (
-    <section id="contact" className="py-24 px-[8vw] md:px-[7vw] lg:px-[16vw] font-sans relative z-10">
+    <section id="transmission" className="relative z-10 px-[7vw] py-24 lg:px-[10vw] lg:py-32">
+      <ToastContainer position="bottom-right" theme="dark" autoClose={4000} />
+      <SectionHeader index="07" label="TRANSMISSION" title="Establish connection." />
 
-      {/* Toast notifications host */}
-      <ToastContainer position="bottom-right" theme="light" autoClose={4000} />
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+        {/* channels */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-70px' }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="lg:col-span-5"
+        >
+          <p className="max-w-md leading-relaxed text-muted">
+            Have a system to build, a role to fill, or an idea worth shipping? Open a
+            channel — I read everything and reply fast.
+          </p>
 
-
-      {/* Background Decorators */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-secondary/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
-
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-3xl sm:text-5xl font-heading font-bold text-text-primary tracking-tight">GET IN TOUCH</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-secondary to-primary mx-auto mt-4 rounded-full"></div>
-        <p className="text-text-secondary mt-6 text-lg max-w-xl mx-auto">
-          Have a question or want to work together? Leave a message below and I will get back to you as soon as possible.
-        </p>
-      </motion.div>
-
-      {/* Contact Form */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="w-full max-w-lg mx-auto glass glass-hover p-8 md:p-10 rounded-3xl relative overflow-hidden"
-      >
-        <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 blur-[60px] rounded-full pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-secondary/20 blur-[60px] rounded-full pointer-events-none" />
-
-        <h3 className="text-2xl font-bold text-text-primary text-center mb-8 relative z-10 tracking-wide font-heading">
-          Connect With Me <motion.span 
-            animate={{ rotate: [0, 10, -10, 0] }} 
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="inline-block origin-bottom-right"
-          >🚀</motion.span>
-        </h3>
-
-        <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-6 relative z-10">
-          <div className="relative group">
-            <input
-              type="email"
-              name="user_email"
-              placeholder="Your Email"
-              required
-              className="w-full p-4 rounded-xl bg-black/5 text-text-primary border border-black/10 focus:outline-none focus:border-primary focus:bg-black/5 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
-            />
-          </div>
-          
-          <div className="relative group">
-            <input
-              type="text"
-              name="user_name"
-              placeholder="Your Name"
-              required
-              className="w-full p-4 rounded-xl bg-black/5 text-text-primary border border-black/10 focus:outline-none focus:border-primary focus:bg-black/5 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
-            />
+          <div className="mt-8 border border-hairline bg-panel">
+            {CHANNELS.map((c, i) => {
+              const inner = (
+                <div
+                  className={`group flex items-center gap-4 px-5 py-4 transition-colors duration-200 hover:bg-void ${
+                    i !== CHANNELS.length - 1 ? 'border-b border-hairline' : ''
+                  }`}
+                >
+                  <span className="text-muted-2 transition-colors group-hover:text-signal">{c.icon}</span>
+                  <div className="min-w-0">
+                    <div className="font-mono text-[10px] tracking-kicker text-muted-2">{c.label}</div>
+                    <div className="truncate font-mono text-sm text-text">{c.value}</div>
+                  </div>
+                  {c.href && (
+                    <FiArrowRight className="ml-auto text-muted-2 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-signal group-hover:opacity-100" />
+                  )}
+                </div>
+              );
+              return c.href ? (
+                <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer">
+                  {inner}
+                </a>
+              ) : (
+                <div key={c.label}>{inner}</div>
+              );
+            })}
           </div>
 
-          <div className="relative group">
-            <input
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              required
-              className="w-full p-4 rounded-xl bg-black/5 text-text-primary border border-black/10 focus:outline-none focus:border-primary focus:bg-black/5 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal"
-            />
+          <div className="mt-6 flex items-center gap-2 font-mono text-[11px] tracking-widest text-muted-2">
+            <span className="h-1.5 w-1.5 rounded-full bg-signal" />
+            STATUS: AVAILABLE FOR WORK
           </div>
+        </motion.div>
 
-          <div className="relative group">
-            <textarea
-              name="message"
-              placeholder="Message"
-              rows="5"
-              required
-              className="w-full p-4 rounded-xl bg-black/5 text-text-primary border border-black/10 focus:outline-none focus:border-primary focus:bg-black/5 transition-all font-medium placeholder:text-text-secondary placeholder:font-normal resize-none"
-            />
+        {/* terminal form */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-70px' }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          className="lg:col-span-7"
+        >
+          <div className="blueprint-frame border border-hairline bg-panel">
+            {/* terminal title bar */}
+            <div className="flex items-center gap-2 border-b border-hairline px-4 py-3">
+              <span className="h-2.5 w-2.5 rounded-full bg-muted-2/60" />
+              <span className="h-2.5 w-2.5 rounded-full bg-muted-2/40" />
+              <span className="h-2.5 w-2.5 rounded-full bg-signal/80" />
+              <span className="ml-3 font-mono text-[11px] tracking-widest text-muted-2">
+                ~/contact — establish-connection.sh
+              </span>
+            </div>
+
+            <form ref={form} onSubmit={sendEmail} className="space-y-5 p-6 sm:p-8">
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <label className="block">
+                  <span className="mb-2 block font-mono text-[10px] tracking-kicker text-muted-2">NAME</span>
+                  <input type="text" name="user_name" placeholder="your name" required className={fieldClass} />
+                </label>
+                <label className="block">
+                  <span className="mb-2 block font-mono text-[10px] tracking-kicker text-muted-2">EMAIL</span>
+                  <input type="email" name="user_email" placeholder="you@domain.com" required className={fieldClass} />
+                </label>
+              </div>
+
+              <label className="block">
+                <span className="mb-2 block font-mono text-[10px] tracking-kicker text-muted-2">SUBJECT</span>
+                <input type="text" name="subject" placeholder="what's this about" required className={fieldClass} />
+              </label>
+
+              <label className="block">
+                <span className="mb-2 block font-mono text-[10px] tracking-kicker text-muted-2">MESSAGE</span>
+                <textarea name="message" rows="5" placeholder="type your message…" required className={`${fieldClass} resize-none`} />
+              </label>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="group flex w-full items-center justify-center gap-3 bg-signal py-3.5 font-mono text-sm font-medium uppercase tracking-widest text-void transition-transform duration-300 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {isSubmitting ? 'Transmitting…' : 'Send Transmission'}
+                {!isSubmitting && (
+                  <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+                )}
+              </button>
+            </form>
           </div>
-          
-          <motion.button
-            whileHover={!isSubmitting ? { scale: 1.02 } : undefined}
-            whileTap={!isSubmitting ? { scale: 0.98 } : undefined}
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full py-4 text-white font-bold text-lg rounded-xl transition-all bg-gradient-to-r from-primary to-secondary shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)] tracking-wide disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </motion.button>
-        </form>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 };

@@ -1,80 +1,80 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FiGithub, FiLinkedin, FiArrowUp } from 'react-icons/fi';
+
+const NAV = [
+  ['index', '00'],
+  ['profile', '01'],
+  ['capabilities', '02'],
+  ['deployments', '03'],
+  ['systems', '04'],
+  ['transmission', '07'],
+];
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
-  const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="text-text-primary relative z-10 border-t border-black/5 bg-background/50 backdrop-blur-xl py-12 px-[8vw] md:px-[7vw] lg:px-[16vw]">
-      <div className="flex flex-col items-center">
-        
-        {/* Brand Logo & Name */}
-        <div 
-          onClick={handleScrollToTop}
-          className="text-2xl sm:text-3xl font-heading font-bold cursor-pointer flex items-center gap-1 group mb-8"
-        >
-          <span className="text-primary transition-transform group-hover:-translate-x-1">&lt;</span>
-          <span>Vansh</span>
-          <span className="text-secondary opacity-70">/</span>
-          <span>Mahajan</span>
-          <span className="text-primary transition-transform group-hover:translate-x-1">&gt;</span>
+    <footer className="relative z-10 border-t border-hairline px-[7vw] py-12 lg:px-[10vw]">
+      <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
+        {/* colophon */}
+        <div>
+          <div className="font-display text-2xl font-semibold text-text">
+            VANSH<span className="text-signal">.</span>MAHAJAN
+          </div>
+          <p className="mt-3 max-w-xs font-mono text-[11px] leading-relaxed tracking-wider text-muted-2">
+            Designed &amp; built from scratch — Engineering Dossier v2.0.0. Clash Display,
+            Satoshi &amp; JetBrains Mono on a blueprint grid.
+          </p>
         </div>
 
-        {/* Quick Links */}
-        <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mb-8">
-          {[
-            { id: "about", label: "About" },
-            { id: "skills", label: "Skills" },
-            { id: "experience", label: "Experience" },
-            { id: "work", label: "Projects" },
-            { id: "education", label: "Education" },
-            { id: "volunteering", label: "Volunteering" },
-            { id: "extracurricular", label: "Extra Curricular" }
-          ].map((item) => (
+        {/* index nav */}
+        <nav className="grid grid-cols-2 gap-x-10 gap-y-2 font-mono text-xs">
+          {NAV.map(([id, n]) => (
             <a
-              key={item.id}
-              href={`#${item.id}`}
-              className="text-text-secondary hover:text-text-primary transition-colors text-sm sm:text-base font-medium tracking-wide relative group"
+              key={id}
+              href={`#${id}`}
+              className="group flex items-center gap-3 text-muted transition-colors hover:text-signal"
             >
-              {item.label}
-              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
+              <span className="text-muted-2 group-hover:text-signal">{n}</span>
+              <span className="uppercase tracking-widest">{id}</span>
             </a>
           ))}
-        </div>
+        </nav>
 
-        {/* Social Media Icons */}
-        <div className="flex justify-center space-x-6 mt-10">
+        {/* socials + back to top */}
+        <div className="flex flex-col items-start gap-5 md:items-end">
+          <div className="flex gap-3">
+            <a
+              href="https://github.com/Vansh150705"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="flex h-10 w-10 items-center justify-center border border-hairline text-muted transition-colors hover:border-signal hover:text-signal"
+            >
+              <FiGithub size={16} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vansh-mahajan-napv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="flex h-10 w-10 items-center justify-center border border-hairline text-muted transition-colors hover:border-signal hover:text-signal"
+            >
+              <FiLinkedin size={16} />
+            </a>
+          </div>
           <a
-            href="https://github.com/Vansh150705"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-secondary hover:text-primary transition-all transform hover:scale-110 p-3 bg-black/5 border border-black/5 rounded-full hover:border-primary/50 shadow-sm"
+            href="#index"
+            className="group flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-muted-2 hover:text-signal"
           >
-            <FaGithub size={20} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/vansh-mahajan-napv/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-text-secondary hover:text-primary transition-all transform hover:scale-110 p-3 bg-black/5 border border-black/5 rounded-full hover:border-primary/50 shadow-sm"
-          >
-            <FaLinkedin size={20} />
+            Back to top
+            <FiArrowUp className="transition-transform duration-300 group-hover:-translate-y-0.5" />
           </a>
         </div>
+      </div>
 
-        {/* Divider */}
-        <div className="w-full max-w-lg h-px bg-gradient-to-r from-transparent via-black/10 to-transparent my-8"></div>
-
-        {/* Copyright */}
-        <div className="text-center text-text-secondary text-sm font-medium">
-          <p>
-            &copy; {currentYear} built with ❤️ by <span className="text-primary font-bold">Vansh Mahajan</span>.
-          </p>
-          <p className="mt-1 text-xs opacity-70">All rights reserved.</p>
-        </div>
+      <div className="mt-10 flex flex-col items-center justify-between gap-2 border-t border-hairline pt-6 font-mono text-[10px] tracking-widest text-muted-2 sm:flex-row">
+        <span>© {year} VANSH MAHAJAN — ALL SYSTEMS OPERATIONAL</span>
+        <span>28.6139°N 77.2090°E</span>
       </div>
     </footer>
   );
