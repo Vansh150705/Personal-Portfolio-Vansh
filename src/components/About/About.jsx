@@ -1,116 +1,119 @@
-import { useRef } from 'react';
-import ReactTypingEffect from 'react-typing-effect';
-import Tilt from 'react-parallax-tilt';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
+import SectionHeader from '../system/SectionHeader';
 import profileImage from '../../assets/Vansh Professional Pic 3.png';
 
+const SPEC = [
+  ['NAME', 'Vansh Mahajan'],
+  ['ROLE', 'Full-Stack & AI Engineer'],
+  ['BASED', 'New Delhi, India'],
+  ['STACK', 'MERN · Python · LangChain'],
+  ['FOCUS', 'Agentic AI · Cloud'],
+  ['STATUS', 'Open to opportunities'],
+];
+
+const STATS = [
+  ['03', 'Internships'],
+  ['04', 'Flagship systems'],
+  ['8.32', 'CGPA'],
+  ['2027', 'B.Tech CSE'],
+];
+
+const ease = [0.22, 1, 0.36, 1];
+
 const About = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"]
-  });
-
-  const yBackground = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const yImage = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2, delayChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
-
   return (
-    <section ref={ref} id="about" className="py-4 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-16 md:mt-24 lg:mt-32 relative z-10">
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="flex flex-col-reverse md:flex-row justify-between items-center"
-      >
-        {/* Left Side */}
-        <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0 relative z-20">
-          <div className="overflow-hidden">
-            <motion.h1 variants={itemVariants} className="text-2xl sm:text-3xl md:text-4xl font-heading font-medium text-text-secondary mb-2 leading-tight">
-              Hi, I am
-            </motion.h1>
-          </div>
-          <div className="overflow-hidden">
-            <motion.h2 variants={itemVariants} className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-text-primary mb-4 leading-tight tracking-tight">
-              Vansh Mahajan
-            </motion.h2>
-          </div>
-          
-          <div className="overflow-hidden">
-            <motion.h3 variants={itemVariants} className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-primary leading-tight">
-              <span className="text-text-primary">I build </span>
-              <ReactTypingEffect
-                text={[
-                  'Scalable Full-Stack Systems',
-                  'Agentic RAG Systems',
-                  'Production-Grade AI Apps',
-                  'Cloud-Ready Architectures',
-                ]}
-                speed={80}
-                eraseSpeed={40}
-                typingDelay={500}
-                eraseDelay={2000}
-                cursorRenderer={(cursor) => (
-                  <span className="text-primary">{cursor}</span>
-                )}
-              />
-            </motion.h3>
-          </div>
+    <section id="profile" className="relative z-10 px-[7vw] py-24 lg:px-[10vw] lg:py-32">
+      <SectionHeader index="01" label="PROFILE" title="Engineer behind the systems." />
 
-          <motion.p variants={itemVariants} className="text-base sm:text-lg text-text-secondary mb-8 mt-6 leading-relaxed max-w-lg mx-auto md:mx-0">
-            Full-Stack & AI Engineer - experienced in designing end-to-end web applications and intelligent Agentic AI systems. Specialized in the MERN stack alongside modern AI Engineering. From building complex, production-grade RAG pipelines to deploying scalable cloud architectures, I focus on delivering high-performance, future-ready solutions.
-          </motion.p>
-
-          <motion.a
-            variants={itemVariants}
-            href="/Vansh Resume.pdf"
-            download="Vansh Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block text-white py-3 px-8 rounded-full text-lg font-bold transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-primary to-secondary shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
-          >
-            DOWNLOAD CV
-          </motion.a>
-        </div>
-
-        {/* Right Side */}
-        <motion.div 
-          style={{ y: yImage }}
-          className="md:w-1/2 flex justify-center md:justify-end relative"
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:gap-10">
+        {/* Left — photo plate + spec sheet */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease }}
+          className="md:col-span-5"
         >
-          <motion.div style={{ y: yBackground }} className="absolute inset-0 bg-primary/10 blur-[80px] rounded-full z-[-1]" />
-          <Tilt
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-[28rem] md:h-[28rem] rounded-full p-2"
-            tiltMaxAngleX={15}
-            tiltMaxAngleY={15}
-            perspective={1000}
-            scale={1.05}
-            transitionSpeed={1000}
-            gyroscope={true}
-          >
-            <div className="w-full h-full rounded-full border border-primary/20 bg-background/50 backdrop-blur-sm p-4 shadow-[0_0_40px_rgba(139,92,246,0.1)]">
+          {/* duotone blueprint photo plate */}
+          <div className="blueprint-frame group relative overflow-hidden border border-hairline bg-panel">
+            <div className="absolute left-3 top-3 z-20 font-mono text-[10px] tracking-kicker text-muted-2">
+              FIG.01 — OPERATOR
+            </div>
+            <div className="relative aspect-[4/5] w-full overflow-hidden">
               <img
                 src={profileImage}
                 alt="Vansh Mahajan"
-                className="w-full h-full rounded-full object-cover"
+                className="h-full w-full object-cover grayscale contrast-[1.05] transition-all duration-700 group-hover:grayscale-0"
+              />
+              {/* amber duotone wash, fades on hover */}
+              <div className="pointer-events-none absolute inset-0 bg-signal/20 mix-blend-color transition-opacity duration-700 group-hover:opacity-0" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent" />
+              {/* scan lines */}
+              <div
+                className="pointer-events-none absolute inset-0 opacity-30"
+                style={{
+                  backgroundImage:
+                    'repeating-linear-gradient(0deg, transparent 0 3px, rgba(0,0,0,0.25) 3px 4px)',
+                }}
               />
             </div>
-          </Tilt>
+          </div>
+
+          {/* spec sheet */}
+          <div className="mt-6 border border-hairline bg-panel">
+            {SPEC.map(([k, v], i) => (
+              <div
+                key={k}
+                className={`flex items-baseline justify-between gap-4 px-4 py-3 font-mono text-xs ${
+                  i !== SPEC.length - 1 ? 'border-b border-hairline' : ''
+                }`}
+              >
+                <span className="tracking-widest text-muted-2">{k}</span>
+                <span className="text-right text-text">{v}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
-      </motion.div>
+
+        {/* Right — manifesto + stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, ease, delay: 0.1 }}
+          className="flex flex-col justify-between md:col-span-7"
+        >
+          <div>
+            <p className="text-xl leading-relaxed text-text sm:text-2xl">
+              I design and ship software end-to-end — where reliable engineering meets
+              applied intelligence.
+            </p>
+            <p className="mt-6 leading-relaxed text-muted">
+              Specialised in the MERN stack alongside modern AI engineering, I move
+              comfortably from complex, production-grade RAG pipelines to scalable cloud
+              architectures. My work spans three engineering internships and four
+              flagship systems — each built for performance, clarity, and real users.
+            </p>
+            <p className="mt-4 leading-relaxed text-muted">
+              I care about the details most people never see: query plans, render
+              budgets, failure modes, and the quiet decisions that make a system feel
+              effortless.
+            </p>
+          </div>
+
+          {/* stat grid */}
+          <div className="mt-10 grid grid-cols-2 gap-px border border-hairline bg-hairline sm:grid-cols-4">
+            {STATS.map(([n, l]) => (
+              <div key={l} className="bg-void p-5">
+                <div className="font-display text-3xl font-semibold text-signal">{n}</div>
+                <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted-2">
+                  {l}
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 };
