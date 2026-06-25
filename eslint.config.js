@@ -36,4 +36,12 @@ export default [
       ],
     },
   },
+  {
+    // React Three Fiber renders custom JSX intrinsics (bufferGeometry,
+    // pointsMaterial, etc.) that eslint-plugin-react flags as unknown props.
+    files: ['src/components/three/**/*.{js,jsx}'],
+    rules: {
+      'react/no-unknown-property': 'off',
+    },
+  },
 ]

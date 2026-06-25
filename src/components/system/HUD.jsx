@@ -22,7 +22,7 @@ const HUD = () => {
   return (
     <div className="pointer-events-none fixed inset-0 z-[70] hidden font-mono text-[10px] tracking-widest text-muted-2 lg:block">
       <div className="absolute left-10 top-5">
-        VM<span className="text-signal">//</span>PORTFOLIO
+        VM<span className="text-signal">{'//'}</span>PORTFOLIO
       </div>
       <div className="absolute bottom-7 left-10">
         28.6139°N&nbsp;&nbsp;77.2090°E — NEW DELHI, IN
