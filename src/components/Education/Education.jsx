@@ -1,78 +1,54 @@
-import { education } from "../../constants";
-import { motion } from "framer-motion";
-import { Timeline } from "../Timeline/Timeline";
-import { TimelineItem } from "../Timeline/TimelineItem";
-import { FaGraduationCap } from "react-icons/fa";
+import { motion } from 'framer-motion';
+import SectionHeader from '../system/SectionHeader';
+import { education } from '../../constants';
 
-// Education components
-
-const EducationCard = ({ edu }) => (
-  <>
-    <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center mb-4 gap-4">
-      <div className="flex items-center gap-4">
-        {/* School logo kept within the card for branding */}
-        <div className="w-12 h-12 rounded-lg bg-white p-1 shadow-md flex-shrink-0">
-          <img src={edu.img} alt={edu.school} className="w-full h-full object-contain rounded-md" />
-        </div>
-        <div>
-          <h3 className="text-xl sm:text-2xl font-semibold text-text-primary tracking-wide">
-            {edu.degree}
-          </h3>
-          <h4 className="text-secondary font-medium mt-1 mb-2 xl:mb-0">
-            {edu.school}
-          </h4>
-        </div>
-      </div>
-      <div className="bg-black/5 border border-black/5 text-text-secondary px-3 py-1 rounded-full whitespace-nowrap hidden xl:block">
-        <p className="text-xs sm:text-sm font-medium">{edu.date}</p>
-      </div>
-    </div>
-    
-    <div className="bg-black/5 border border-black/5 text-text-secondary px-3 py-1 rounded-full whitespace-nowrap inline-block xl:hidden mb-4">
-      <p className="text-xs font-medium">{edu.date}</p>
-    </div>
-
-    {edu.grade && (
-      <div className="mb-4 inline-block bg-secondary/10 border border-secondary/20 px-3 py-1 rounded-lg">
-        <span className="text-sm font-bold text-text-primary">Grade: </span>
-        <span className="text-sm text-secondary font-semibold">{edu.grade}</span>
-      </div>
-    )}
-    <p className="text-text-secondary leading-relaxed">{edu.desc}</p>
-  </>
-);
+const ease = [0.22, 1, 0.36, 1];
 
 const Education = () => {
   return (
-    <section id="education" className="py-24 px-[8vw] md:px-[10vw] lg:px-[16vw] font-sans relative z-10">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+    <section id="foundation" className="relative z-10 px-[7vw] py-24 lg:px-[10vw] lg:py-32">
+      <SectionHeader index="05" label="FOUNDATION" title="Academic record." />
 
-      {/* Section Title */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-20 md:mb-24"
-      >
-        <h2 className="text-3xl sm:text-5xl font-heading font-bold text-text-primary tracking-tight">EDUCATION</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-secondary to-primary mx-auto mt-4 rounded-full"></div>
-        <p className="text-text-secondary mt-6 text-lg max-w-2xl mx-auto">
-          My academic background and qualifications.
-        </p>
-      </motion.div>
-
-      {/* Education Timeline */}
-      <Timeline lineColor="from-secondary via-primary to-transparent">
-        {education.map((edu) => (
-          <TimelineItem 
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        {education.map((edu, i) => (
+          <motion.article
             key={edu.id}
-            icon={<FaGraduationCap />}
-            accentColor="secondary"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-70px' }}
+            transition={{ duration: 0.6, ease, delay: i * 0.08 }}
+            className="blueprint-frame flex flex-col border border-hairline bg-panel p-6 transition-colors duration-300 hover:border-signal/30 sm:p-8"
           >
-            <EducationCard edu={edu} />
-          </TimelineItem>
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden border border-hairline bg-void">
+                  <img src={edu.img} alt={edu.school} className="h-full w-full object-contain p-1" />
+                </div>
+                <div>
+                  <h3 className="font-display text-lg font-medium leading-tight text-text">
+                    {edu.school}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted">{edu.degree}</p>
+                </div>
+              </div>
+              <span className="shrink-0 font-mono text-[10px] tracking-widest text-signal">
+                EDU_{String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
+
+            <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1 font-mono text-[11px] tracking-widest text-muted-2">
+              <span>{edu.date}</span>
+              {edu.grade && (
+                <span>
+                  GRADE <span className="text-signal">{edu.grade}</span>
+                </span>
+              )}
+            </div>
+
+            <p className="mt-4 flex-1 leading-relaxed text-muted">{edu.desc}</p>
+          </motion.article>
         ))}
-      </Timeline>
+      </div>
     </section>
   );
 };
