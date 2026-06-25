@@ -1,189 +1,107 @@
-import { useState } from "react";
-import { projects } from "../../constants";
-import { motion, AnimatePresence } from "framer-motion";
-import Tilt from "react-parallax-tilt";
+import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
+import { FiGithub, FiArrowUpRight } from 'react-icons/fi';
+import SectionHeader from '../system/SectionHeader';
+import { projects } from '../../constants';
+
+const ease = [0.22, 1, 0.36, 1];
 
 const Work = () => {
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100 } },
-  };
-
   return (
-    <section id="work" className="py-24 px-[8vw] md:px-[7vw] lg:px-[16vw] font-sans relative z-10">
-      
-      {/* Background Orbs */}
-      <div className="absolute top-0 right-[10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
-      <div className="absolute bottom-0 left-[10%] w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none z-[-1]" />
+    <section id="systems" className="relative z-10 px-[7vw] py-24 lg:px-[10vw] lg:py-32">
+      <SectionHeader index="04" label="SYSTEMS" title="Selected work." />
 
-      {/* Section Title */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-20"
-      >
-        <h2 className="text-3xl sm:text-5xl font-heading font-bold text-text-primary tracking-tight">FEATURED PROJECTS</h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-primary to-blue-500 mx-auto mt-4 rounded-full"></div>
-        <p className="text-text-secondary mt-6 text-lg max-w-2xl mx-auto">
-          A showcase of the systems and applications I&apos;ve built, reflecting my journey as a full-stack developer.
-        </p>
-      </motion.div>
-
-      {/* Projects Grid */}
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.map((project) => (
-          <motion.div variants={itemVariants} key={project.id}>
-            <Tilt
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
-              perspective={1000}
-              transitionSpeed={1000}
-              gyroscope={true}
-              className="h-full"
+      <div className="space-y-20 lg:space-y-28">
+        {projects.map((p, i) => {
+          const flip = i % 2 === 1;
+          return (
+            <motion.article
+              key={p.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.7, ease }}
+              className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12"
             >
-              <div
-                onClick={() => setSelectedProject(project)}
-                className="h-full glass glass-hover rounded-3xl overflow-hidden cursor-pointer flex flex-col group bg-white/40"
-              >
-                <div className="relative overflow-hidden h-96 p-4">
-                  {/* Subtle vignette gradient in light mode */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/50 z-10" />
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover object-top rounded-2xl group-hover:scale-105 transition-transform duration-700 shadow-sm bg-black/5"
-                  />
-                  {/* Decorative corner accents */}
-                  <div className="absolute top-2 left-2 w-8 h-8 border-t border-l border-primary/50 rounded-tl-xl" />
-                  <div className="absolute bottom-2 right-2 w-8 h-8 border-b border-r border-secondary/50 rounded-br-xl" />
-                </div>
-                
-                <div className="p-6 flex-grow flex flex-col relative z-20 -mt-6">
-                  <h3 className="text-2xl font-bold text-text-primary mb-3 tracking-wide drop-shadow-sm">
-                    {project.title}
-                  </h3>
-                  <p className="text-text-secondary mb-6 text-sm flex-grow line-clamp-3 font-medium">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tags.slice(0, 3).map((tag, index) => (
-                      <span
-                        key={index}
-                        className="bg-primary/10 border border-primary/20 text-[10px] font-bold text-primary rounded-full px-3 py-1 uppercase tracking-wider"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                    {project.tags.length > 3 && (
-                      <span className="bg-black/5 border border-black/10 text-[10px] font-bold text-text-secondary rounded-full px-3 py-1 uppercase tracking-wider">
-                        +{project.tags.length - 3}
-                      </span>
-                    )}
+              {/* visual plate */}
+              <div className={`lg:col-span-7 ${flip ? 'lg:order-2' : ''}`}>
+                <Tilt
+                  tiltMaxAngleX={6}
+                  tiltMaxAngleY={6}
+                  glareEnable
+                  glareMaxOpacity={0.12}
+                  glareColor="#FFB000"
+                  glarePosition="all"
+                  scale={1.01}
+                  transitionSpeed={1200}
+                  className="blueprint-frame overflow-hidden border border-hairline bg-panel"
+                >
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-void">
+                    <div className="absolute left-3 top-3 z-10 font-mono text-[10px] tracking-kicker text-muted-2">
+                      FIG.0{i + 1}
+                    </div>
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="h-full w-full object-cover opacity-90 transition-transform duration-700 hover:scale-[1.03]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-void/60 to-transparent" />
                   </div>
-                </div>
+                </Tilt>
               </div>
-            </Tilt>
-          </motion.div>
-        ))}
-      </motion.div>
 
-      {/* Modal Container */}
-      <AnimatePresence>
-        {selectedProject && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 backdrop-blur-md bg-white/40"
-            onClick={() => setSelectedProject(null)}
-          >
-            <motion.div 
-              initial={{ scale: 0.9, y: 20, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.9, y: 20, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              onClick={(e) => e.stopPropagation()}
-              className="bg-background border border-black/10 rounded-3xl shadow-2xl shadow-black/10 w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col relative"
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 z-50 w-10 h-10 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-text-primary hover:bg-primary hover:text-white transition-colors border border-black/10 shadow-sm"
-              >
-                &times;
-              </button>
-
-              <div className="overflow-y-auto no-scrollbar">
-                <div className="w-full h-96 md:h-[500px] bg-white relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
-                  <img
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    className="w-full h-full object-cover object-top relative z-0 bg-black/5"
-                  />
+              {/* dossier content */}
+              <div className={`lg:col-span-5 ${flip ? 'lg:order-1' : ''}`}>
+                <div className="mb-4 flex items-center gap-4 font-mono text-[11px] tracking-widest">
+                  <span className="text-signal">SYS_{String(i + 1).padStart(3, '0')}</span>
+                  <span className="flex items-center gap-1.5 text-muted-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-signal" /> STATUS: DEPLOYED
+                  </span>
                 </div>
-                
-                <div className="p-8 md:p-12 relative z-20 -mt-20">
-                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-6">
-                    {selectedProject.title}
-                  </h3>
-                  
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {selectedProject.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="bg-primary/10 border border-primary/20 text-xs font-bold text-primary rounded-full px-3 py-1 uppercase tracking-wider"
-                      >
-                        {tag}
+
+                <h3 className="font-display text-3xl font-semibold text-text sm:text-4xl">
+                  {p.title}
+                </h3>
+
+                <p className="mt-4 leading-relaxed text-muted">{p.description}</p>
+
+                {/* stack readout */}
+                <div className="mt-6 border-y border-hairline py-4">
+                  <div className="mb-2 font-mono text-[10px] tracking-kicker text-muted-2">STACK</div>
+                  <div className="flex flex-wrap gap-x-4 gap-y-1.5 font-mono text-xs text-muted">
+                    {p.tags.map((t) => (
+                      <span key={t} className="before:mr-1.5 before:text-signal/60 before:content-['+']">
+                        {t}
                       </span>
                     ))}
                   </div>
+                </div>
 
-                  <p className="text-text-secondary text-base md:text-lg mb-10 leading-relaxed font-medium">
-                    {selectedProject.description}
-                  </p>
-                  
-                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                    <a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-black/5 border border-black/10 hover:bg-black/10 text-text-primary px-8 py-4 rounded-2xl text-center text-lg font-semibold transition-all hover:-translate-y-1"
-                    >
-                      View Source
-                    </a>
-                    <a
-                      href={selectedProject.webapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl text-center text-lg font-bold transition-all shadow-[0_0_15px_rgba(37,99,235,0.3)] hover:shadow-[0_0_25px_rgba(37,99,235,0.5)] hover:-translate-y-1"
-                    >
-                      Live Demo
-                    </a>
-                  </div>
+                {/* links */}
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a
+                    href={p.webapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 bg-signal px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-widest text-void transition-transform duration-300 hover:-translate-y-0.5"
+                  >
+                    Live
+                    <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 border border-hairline px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-text transition-colors duration-300 hover:border-signal hover:text-signal"
+                  >
+                    <FiGithub /> Source
+                  </a>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.article>
+          );
+        })}
+      </div>
     </section>
   );
 };
