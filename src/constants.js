@@ -8,9 +8,8 @@ import glaLogo from './assets/education_logo/srmlogo.jpeg';
 import davLogo from './assets/education_logo/dav-logo.png';
 
 // Project Section Logo's
-import githubdetLogo from './assets/work_logo/Taskflow.png';
-import csprepLogo from './assets/work_logo/Blogify.png';
-import movierecLogo from './assets/work_logo/AgenticSOC.png';
+import csprepLogo from './assets/work_logo/Blogify.png'; // placeholder thumbnail for Plumeo
+import movierecLogo from './assets/work_logo/AgenticSOC.png'; // placeholder thumbnail for ThreatBrain
 import webverLogo from './assets/work_logo/talkdox-thumbnail.png';
 
 export const SkillsInfo = [
@@ -103,11 +102,11 @@ export const education = [
 ];
 
 export const projects = [
-{
+  {
     id: 0,
     title: "TalkDox",
     description:
-      "Built a production-grade Agentic RAG system using React, FastAPI, LangChain, FAISS, and Google Gemini 2.5 Flash — supporting chat with PDFs, websites, and YouTube videos. Implemented 3 Agentic AI layers (Clarification, Self-Reflection, Confidence Adaptation), Document DNA fingerprinting, Doc vs Doc Comparison with dual vector retrieval, chronological Timeline Extractor, Smart Flashcards, 5 automation tools, AI Personas, Voice Input, and Multilingual support. Deployed on Vercel + HuggingFace Spaces.",
+      "Production-grade Agentic RAG system built with React, FastAPI, LangChain, FAISS, and Google Gemini 2.5 Flash — supporting chat with PDFs, websites, and YouTube videos. Implements 3 Agentic AI layers (Clarification, Self-Reflection, Confidence Adaptation), Document fingerprinting, Doc vs Doc Comparison with dual vector retrieval, a chronological Timeline Extractor, a Smart Flashcard Generator, and 5 one-click automation tools. Deployed on Vercel + HuggingFace Spaces.",
     image: webverLogo,
     tags: [
       "React",
@@ -123,56 +122,40 @@ export const projects = [
   },
   {
     id: 1,
-    title: "TaskFlow",
+    title: "ThreatBrain",
     description:
-      "Full-stack task management platform developed for Airports Authority of India, built on the MERN stack. Implements JWT-based authentication, role-based dashboards (Admin / Employee), real-time team communication, and hierarchical sub-task workflows. Designed scalable REST APIs and optimized MongoDB queries to support concurrent users, improving task tracking efficiency and overall workflow management.",
-    image: githubdetLogo,
+      "AI-driven multi-tenant SOC automation platform built with FastAPI, Groq LLM API, Supabase Postgres, and React + TypeScript. Features a 7-agent orchestrator pipeline performing MITRE ATT&CK classification, IOC enrichment via third-party threat-intel APIs, and cross-event correlation that auto-promotes incidents. Engineered with Pydantic-validated JSON-mode LLM I/O, row-level security for tenant isolation, and append-only audit trails via Postgres triggers.",
+    image: movierecLogo,
     tags: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JWT",
-      "Socket.io",
-      "REST APIs"
+      "FastAPI",
+      "Groq LLM API",
+      "Supabase",
+      "PostgreSQL",
+      "React",
+      "TypeScript",
+      "MITRE ATT&CK",
+      "Multi-Agent"
     ],
-    github: "https://github.com/Vansh150705/taskmanager-frontend",
-    webapp: "https://office-task-manager.vercel.app/",
+    github: "",
+    webapp: "",
   },
   {
     id: 2,
-    title: "Blogify - by VM",
+    title: "Plumeo",
     description:
-      "AI-powered full-stack blogging platform built using the MERN stack, integrating Google Gemini for intelligent content generation and ImageKit for optimized media delivery. Features authentication, dynamic content management, and a clean editor interface. Demonstrates practical integration of LLMs into web applications with a focus on performance, usability, and efficient content workflows.",
+      "Enterprise goal-setting and tracking portal built with Next.js 14, TypeScript, and Supabase Postgres. Implements Entra ID SSO with role-based access (Admin / Manager / Employee) via Postgres row-level security, four scoring formulas as isomorphic pure functions, an approval workflow state machine, and an immutable audit log with before/after JSON diffs. Integrates a multi-channel notification queue (Email + Teams + In-app) and a rule-based escalation engine running on Vercel cron.",
     image: csprepLogo,
     tags: [
-      "React.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Gemini API",
-      "ImageKit",
-      "AI Integration"
+      "Next.js 14",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Entra ID SSO",
+      "Vercel Cron",
+      "RBAC"
     ],
-    github: "https://github.com/Vansh150705/Blogify---by-VM",
-    webapp: "https://blogify-by-vm-frontend.vercel.app/",
-  },
-  {
-    id: 3,
-    title: "Agentic SOC Platform",
-    description:
-      "Full-stack Security Operations Center (SOC) platform designed for real-time threat monitoring and incident management. Built end-to-end with a React frontend and automated data pipelines using n8n and Google Sheets API. Implements live data streaming, incident lifecycle tracking, multi-channel alerting, and PDF report generation. Focused on building a scalable, automation-driven system for operational visibility and efficient response handling.",
-    image: movierecLogo,
-    tags: [
-      "React.js",
-      "n8n",
-      "Google Sheets API",
-      "Automation",
-      "Real-time Systems",
-      "System Design"
-    ],
-    github: "https://github.com/Vansh150705/Frontend-Agentic-SOC",
-    webapp: "https://frontend-agentic-soc.vercel.app/",
+    github: "",
+    webapp: "",
   },
 ];
 

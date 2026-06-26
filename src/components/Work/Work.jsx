@@ -78,24 +78,33 @@ const Work = () => {
                 </div>
 
                 {/* links */}
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <a
-                    href={p.webapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 bg-signal px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-widest text-void transition-transform duration-300 hover:-translate-y-0.5"
-                  >
-                    Live
-                    <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </a>
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 border border-hairline px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-text transition-colors duration-300 hover:border-signal hover:text-signal"
-                  >
-                    <FiGithub /> Source
-                  </a>
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  {p.webapp && (
+                    <a
+                      href={p.webapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-2 bg-signal px-5 py-2.5 font-mono text-xs font-medium uppercase tracking-widest text-void transition-transform duration-300 hover:-translate-y-0.5"
+                    >
+                      Live
+                      <FiArrowUpRight className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                  )}
+                  {p.github && (
+                    <a
+                      href={p.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 border border-hairline px-5 py-2.5 font-mono text-xs uppercase tracking-widest text-text transition-colors duration-300 hover:border-signal hover:text-signal"
+                    >
+                      <FiGithub /> Source
+                    </a>
+                  )}
+                  {!p.webapp && !p.github && (
+                    <span className="font-mono text-[11px] uppercase tracking-widest text-muted-2">
+                      {'// source private — available on request'}
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.article>
