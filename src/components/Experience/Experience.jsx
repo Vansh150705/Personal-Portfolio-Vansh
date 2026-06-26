@@ -4,6 +4,16 @@ import { experiences } from '../../constants';
 
 const ease = [0.22, 1, 0.36, 1];
 
+/** First letters of the first two words — used when no logo asset exists. */
+const monogram = (name) =>
+  name
+    .split(/[\s,]+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase();
+
 const Experience = () => {
   return (
     <section id="deployments" className="relative z-10 px-[7vw] py-24 lg:px-[10vw] lg:py-32">
@@ -30,7 +40,13 @@ const Experience = () => {
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
                   <div className="flex items-start gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden border border-hairline bg-void">
-                      <img src={exp.img} alt={exp.company} className="h-full w-full object-contain p-1" />
+                      {exp.img ? (
+                        <img src={exp.img} alt={exp.company} className="h-full w-full object-contain p-1" />
+                      ) : (
+                        <span className="font-mono text-sm font-medium text-signal">
+                          {monogram(exp.company)}
+                        </span>
+                      )}
                     </div>
                     <div>
                       <h3 className="font-display text-xl font-medium text-text">{exp.role}</h3>
