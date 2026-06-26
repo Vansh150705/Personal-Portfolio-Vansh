@@ -12,9 +12,9 @@ const SPEC = [
 ];
 
 const STATS = [
-  ['03', 'Internships'],
-  ['04', 'Flagship systems'],
-  ['8.32', 'CGPA'],
+  ['04', 'Internships'],
+  ['03', 'Flagship systems'],
+  ['8.43', 'CGPA'],
   ['2027', 'B.Tech CSE'],
 ];
 
@@ -91,7 +91,7 @@ const About = () => {
             <p className="mt-6 leading-relaxed text-muted">
               Specialised in the MERN stack alongside modern AI engineering, I move
               comfortably from complex, production-grade RAG pipelines to scalable cloud
-              architectures. My work spans three engineering internships and four
+              architectures. My work spans four engineering internships and three
               flagship systems — each built for performance, clarity, and real users.
             </p>
             <p className="mt-4 leading-relaxed text-muted">
