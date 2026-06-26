@@ -15,28 +15,20 @@ import webverLogo from './assets/work_logo/talkdox-thumbnail.png';
 
 export const SkillsInfo = [
   {
-    title: 'Languages',
-    skills: ['Python', 'JavaScript', 'C++', 'PHP']
+    title: 'Programming Languages',
+    skills: ['C++', 'Python', 'JavaScript', 'TypeScript', 'PHP', 'HTML', 'CSS']
   },
   {
-    title: 'Full-Stack Web',
-    skills: ['HTML', 'CSS', 'React.js', 'Next.js', 'Tailwind CSS', 'Redux', 'GSAP', 'Node.js', 'Express.js', 'REST APIs', 'Socket.io']
-  },
-  {
-    title: 'AI Engineering',
-    skills: ['LangChain', 'FAISS', 'RAG', 'Agentic AI', 'Gemini']
+    title: 'AI / ML',
+    skills: ['LangChain', 'LangGraph', 'CrewAI', 'FAISS', 'RAG', 'Agentic AI', 'Multi-Agent Systems', 'Gemini API', 'Gemini Embeddings', 'TensorFlow / Keras', 'Prompt Engineering']
   },
   {
     title: 'Databases',
-    skills: ['MongoDB', 'SQL']
+    skills: ['SQL', 'MongoDB', 'Vector Databases', 'PostgreSQL']
   },
   {
-    title: 'Cloud & DevOps',
-    skills: ['AWS', 'Docker', 'CI/CD', 'Vercel']
-  },
-  {
-    title: 'Tools',
-    skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'npm', 'Yarn', 'Figma', 'Chrome DevTools']
+    title: 'Frameworks',
+    skills: ['React.js', 'Node.js', 'Express.js', 'Redux', 'Tailwind CSS', 'Socket.IO']
   }
 ];
 
