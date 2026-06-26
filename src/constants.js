@@ -86,9 +86,9 @@ export const education = [
     img: glaLogo,
     school: "S.R.M. Institute of Science and Technology",
     date: "Batch: 2023 - 2027",
-    grade: "8.32 CGPA",
-    desc: "Pursuing B.Tech in Computer Science with a strong academic foundation. Relevant coursework includes Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Full-Stack Web Development. Actively applying theoretical concepts to real-world projects and internships, with a focus on building scalable and efficient systems.",
-    degree: "Bachelor of Technology (B.Tech) - Computer Science",
+    grade: "8.43 CGPA",
+    desc: "Pursuing B.Tech in Computer Science & Engineering with a strong academic foundation. Relevant coursework includes Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Full-Stack Web Development. Actively applying theoretical concepts to real-world projects and internships, with a focus on building scalable and efficient systems.",
+    degree: "Bachelor of Technology (B.Tech) - Computer Science & Engineering",
   },
   {
     id: 1,
