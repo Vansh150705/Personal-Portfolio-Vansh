@@ -39,3 +39,23 @@ This project leverages modern web development tools to maintain high performance
 - `react-typing-effect`: Provides the dynamic hero text typing interactions.
 - `react-toastify`: Adds elegant, non-blocking pop-up notifications to confirm form submissions or interactions.
 - `react-icons`: Used extensively for a rich suite of scalable SVG outlines and fill icons throughout the interface.
+
+## 🚀 Getting Started
+
+Run the project locally in a few steps:
+
+```bash
+# Install dependencies
+npm install
+
+# Start the dev server (Vite)
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview the production build
+npm run preview
+```
+
+The dev server runs at `http://localhost:5173` by default.
