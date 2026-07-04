@@ -3,6 +3,21 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "Modern, responsive, and animated personal portfolio built with React, Vite, Tailwind CSS, and Framer Motion.",
+  "author": "Vansh",
+  "license": "MIT",
+  "homepage": "https://vansh-portfolio-mauve.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vansh150705/Personal-Portfolio-Vansh.git"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "tailwindcss",
+    "framer-motion"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
